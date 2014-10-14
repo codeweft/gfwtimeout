@@ -1,31 +1,33 @@
 <!doctype html>
-<html>
-  <head>
-    <title>Getting Started Extension's Popup</title>
-    <style>
-      body {
-        min-width: 357px;
-        overflow-x: hidden;
-      }
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div>
+    <table id='profile-table'></table>
+    <div class='content'>
+        <fieldset>
+            <legend>Request Headers</legend>
+            <table id='header-table'></table>
+            <div>
+                <a id='add-header-btn' href='#'>Add Header</a>
+            </div>
+        </fieldset>
 
-      img {
-        margin: 5px;
-        border: 2px solid black;
-        vertical-align: middle;
-        width: 75px;
-        height: 75px;
-      }
-    </style>
+        <fieldset class='filter-control'>
+            <legend>Filters</legend>
+            <table id='filter-table'></table>
+            <div>
+                <a id='add-filter-btn' href='#'>Add Filter</a>
+            </div>
+        </fieldset>
+    </div>
+</div>
 
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
-     -->
-    <script src="popup.js"></script>
-  </head>
-  <body>
-  </body>
-</html>
-
+<script src='jquery.js'></script>
+<script src='rowmanager.js'></script>
+<script src='header.js'></script>
+<script src='filter.js'></script>
+<script src='profile.js'></script>
+<script src='popup.js'></script>
+</body>

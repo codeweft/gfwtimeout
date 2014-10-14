@@ -12,7 +12,8 @@
   "permissions": [
     "webRequest",
     "webRequestBlocking",
-    "*://*.gstatic.com/"
+    "storage",
+    "*://*/"
   ],
   "background": {
     "scripts": ["popup.js"],
