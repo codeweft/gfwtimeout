@@ -11,7 +11,7 @@
 //}
 
 function checkUrl(url) {
-  return url.match(/.*google.*/);
+  return url.match(/.*fsdfsfs.*/);
 //  return true
 //
 }
