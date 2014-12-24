@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="opts.css">
 </head>
 <body>
-<h2>Todo</h2>
+<h2>Select and Add New Domain Names to Block the Requests For</h2>
 <div ng-controller="TodoController">
-    <span>{{remaining()}} of {{todos.length}} remaining</span>
-    [ <a href="" ng-click="archive()">archive</a> ]
+    <!--<span>{{remaining()}} of {{todos.length}} remaining</span>-->
+    <!--[ <a href="" ng-click="archive()">archive</a> ]-->
     <ul class="unstyled">
         <li ng-repeat="todo in todos">
             <input type="checkbox" ng-model="todo.done">
-            <span class="done-{{todo.done}}">{{todo.text}}</span>
+            <span class="done-{{!todo.done}}">{{todo.text}}</span>
         </li>
     </ul>
     <form ng-submit="addTodo()">
