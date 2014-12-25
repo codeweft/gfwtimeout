@@ -16,10 +16,10 @@
     "*://*/"
   ],
   "background": {
-    "scripts": ["popup.js"],
+    "scripts": ["js/angular.js","background.js"],
     "persistent": true,
     "default_icon": "icon.png",
-    "default_popup": "popup.html"
+    "default_popup": "opts.html"
   },
 
   "options_page": "opts.html"
