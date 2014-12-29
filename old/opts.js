@@ -18,6 +18,10 @@ angular.module('todoApp', [])
             return count;
         };
 
+        $scope.getTodo = function() {
+            $scope.todos = getItem("todoitems")
+        };
+
         $scope.archive = function() {
             var oldTodos = $scope.todos;
             $scope.todos = [];

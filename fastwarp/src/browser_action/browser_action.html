@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="todoApp">
+<html ng-app="todoApp" ng-app ng-csp>
 <head>
     <script src="../../js/angular/angular.js"></script>
     <script src="browser_action.js"></script>
@@ -29,7 +29,7 @@
         <!--<span>{{remaining()}} of {{todos.length}} remaining</span>-->
         <!--[ <a href="" ng-click="archive()">archive</a> ]-->
         <ul class="unstyled">
-            <li ng-repeat="todo in todos">
+            <li ng-repeat="todo in getItems()">
                 <input type="checkbox" ng-model="todo.done">
                 <span class="done-{{!todo.done}}">{{todo.text}}</span>
             </li>
