@@ -9,6 +9,16 @@
     "48": "icons/iconDefault.png",
     "128": "icons/iconDefault.png"
   },
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "webNavigation",
+    "webRequestBlocking",
+    "storage",
+    "management",
+    "http://*/*",
+    "https://*/*"
+  ],
   "default_locale": "en",
   "background": {
     "page": "src/bg/background.html",

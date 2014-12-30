@@ -3,9 +3,9 @@ angular.module('todoApp', [])
         $scope.todos = [];
 
         $scope.addTodo = function () {
-            $scope.todos.push({text: $scope.todoText, done: false});
+            if($scope.todoText) $scope.todos.push({text: $scope.todoText, done: true});
             $scope.todoText = '';
-            chrome.runtime.sendMessage({method:"setStorage", newData:$scope.todos});
+            chrome.runtime.sendMessage({method: "setStorage", newData: $scope.todos});
         };
 
         $scope.remaining = function () {
@@ -24,8 +24,9 @@ angular.module('todoApp', [])
             });
         };
 
-        chrome.runtime.sendMessage({method: "getStorage", extensionSettings: "storage"}, function(resp) {
+        chrome.runtime.sendMessage({method: "getStorage", extensionSettings: "storage"}, function (resp) {
             $scope.todos = resp.extdata;
+            $scope.$apply();
         });
     }]);
 
