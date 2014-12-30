@@ -18,6 +18,11 @@ angular.module('todoApp', [])
 
         $scope.deleteItem = function (index) {
             $scope.todos.splice(index, 1);
+            chrome.runtime.sendMessage({method: "setStorage", newData: $scope.todos});
+        }
+
+        $scope.saveItem = function ($index) {
+            chrome.runtime.sendMessage({method: "setStorage", newData: $scope.todos});
         }
 
         $scope.archive = function () {
