@@ -15,23 +15,17 @@
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
   if(message.method == "getStorage"){
     if(message.extensionSettings === "storage") {
-      // send local storage data {"one": "data", "two": "data"}
-      sendResponse({extdata:localStorage.getItem("extdata")}  );
+      sendResponse({extdata:JSON.parse(localStorage.getItem("extdata") || '{}')});
     }
   }
   else if(message.method == "setStorage"){
-    // save new data from content script
-    localStorage.setItem("extdata", message.newData);
+    localStorage.setItem("extdata", JSON.stringify(message.newData));
   }
 });
 
-
-//initialize
-
-function init() {
-  var todos = [
+var todos = [
     {text:'use.typekit.net', done:true},
-    {text:'googleapis.com', done:false}];
-  var todoJSON = JSON.stringify(todos)
-  localStorage.setItem("extdata", todoJSON);
-}
+    {text:'googleapis.com', done:false}
+];
+
+localStorage.setItem("extdata", JSON.stringify(todos));
