@@ -16,6 +16,10 @@ angular.module('todoApp', [])
             return count;
         };
 
+        $scope.deleteItem = function (index) {
+            $scope.todos.splice(index, 1);
+        }
+
         $scope.archive = function () {
             var oldTodos = $scope.todos;
             $scope.todos = [];

@@ -2,9 +2,14 @@
 <html ng-app="todoApp" ng-app ng-csp>
 <head>
     <script src="../../js/angular/angular.js"></script>
+    <script src="../../js/jquery/jquery.js"></script>
+    <script src="../../js/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../../js/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../../js/bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../../js/font-awesome/css/font-awesome.min.css">
+
     <script src="init.js"></script>
     <script src="browser_action.js"></script>
-
     <style type="text/css">
         #mainPopup {
             padding: 10px;
@@ -32,6 +37,7 @@
             <li ng-repeat="todo in todos track by $index">
                 <input type="checkbox" ng-model="todo.done">
                 <span class="done-{{!todo.done}}">{{todo.text}}</span>
+                <i ng-click="deleteItem($index)" class="icon-trash"></i>
             </li>
         </ul>
         <form ng-submit="addTodo()">
